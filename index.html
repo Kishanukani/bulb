@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bulb</title>
+    <style>
+        * {
+            margin: 0px;
+            padding: 0px;
+            box-sizing: border-box;
+        }
+
+        /* body {
+            background-color: black;
+        } */
+
+        .container {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+            gap: 20px;
+        }
+
+        .bulbof {
+
+            /* filter: invert(); */
+            height: 800px;
+        }
+
+        img {
+            height: 800px;
+        }
+
+        .btn {
+            text-align: center;
+            display: flex;
+            width: 20%;
+            justify-content: center;
+            align-items: center;
+            background-color: aqua;
+            color: black;
+            font-size: 30px;
+            height: 40px;
+            /* text-align: center; */
+        }
+    </style>
+</head>
+
+<body>
+    <div id="container" class="container">
+        <img id="bulb" class="bulbof" src="img/bulboff.jpg" alt="">
+        <button id="lightbtn" class="btn">Turn on</button>
+    </div>
+
+
+    <script>
+        let bulbbtn = document.getElementById('lightbtn')
+        let bulb = document.getElementById('bulb')
+        const container = document.getElementById('container');
+
+        bulbbtn.addEventListener('click', changebulb)
+        function changebulb(e) {
+            if (bulbbtn.textContent.includes('on')) {
+                bulb.src = 'img/bulbon.jpg'
+                bulbbtn.textContent = 'turn off'
+                container.style.backgroundColor = "black"
+            }
+            else {
+                bulb.src = 'img/bulboff.jpg'
+                container.style.backgroundColor = "orange"
+
+                bulbbtn.textContent = 'turn on'
+            }
+        }
+    </script>
+</body>
+
+</html>
